@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+TAS:wght@100..400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playwrite AU TAS", cursive;
+}
+body {
+    
+    font-family: Arial;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    animation: gokila 2s alternate infinite;
+
+    .carousel-container {
+        perspective: 400px;
+    }
+
+    .carousel-container .carousel {
+        position: absolute;
+        position: relative;
+        width: 300px;
+        height: 400px;
+        transform-style: preserve-3d;
+        animation: rotate 20s linear infinite;
+        left: 10%;
+
+        .item {
+            position: absolute;
+            inset: 0;
+
+            img {
+                width: 250px;
+                height: 350px;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+                animation: img 4s linear infinite;
+            }
+        }
+    }
+
+    .item:nth-child(1) {
+        transform: rotateY(0deg) translateZ(-500px);
+    }
+
+    .item:nth-child(2) {
+        transform: rotateY(45deg) translateZ(-500px);
+    }
+
+    .item:nth-child(3) {
+        transform: rotateY(90deg) translateZ(-500px);
+    }
+
+    .item:nth-child(4) {
+        transform: rotateY(135deg) translateZ(-500px);
+    }
+
+    .item:nth-child(5) {
+        transform: rotateY(180deg) translateZ(-500px);
+    }
+
+    .item:nth-child(6) {
+        transform: rotateY(225deg) translateZ(-500px);
+    }
+
+    .item:nth-child(7) {
+        transform: rotateY(270deg) translateZ(-500px);
+    }
+
+    .item:nth-child(8) {
+        transform: rotateY(315deg) translateZ(-500px);
+    }
+
+    .container {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        width: 299px;
+        box-shadow: 0 0 10px black;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 1s;
+        }
+
+        button:hover {
+            background: black;
+            box-shadow: 2px 2px 5px #007bff,
+                -2px 2px 5px #007bff,
+                -2px -2px 5px #007bff,
+                2px -2px 5px #007bff;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}
+
+
+
+@keyframes gokila {
+    0% {
+        background: linear-gradient(120deg, #007ACC 10%, white);
+    }
+
+    25% {
+        background: linear-gradient(120deg, white, #007ACC 50%, white, );
+
+    }
+
+    50% {
+        background: linear-gradient(120deg, white, #007ACC 20%, white);
+    }
+
+    75% {
+        background: linear-gradient(120deg, white, #007ACC 40%, white);
+    }
+
+    100% {
+        background: linear-gradient(120deg, white, #007ACC 70%);
+
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: perspective(1200px) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(1200px) rotateY(360deg);
+    }
+}
+
+@media (max-width: 300px) {
+  body {
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .carousel-container {
+    display: none; 
+  }
+
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .container h2 {
+    font-size: 20px;
+  }
+
+  .container input,
+  .container button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .container p {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 301px) and (max-width: 480px) {
+  .carousel-container {
+    display: none;
+  }
+
+  .container {
+    width: 85%;
+    padding: 20px;
+  }
+
+  .container h2 {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-container {
+    position: absolute;
+    left: 5%;
+    transform: scale(0.7);
+  }
+
+  .container {
+    width: 320px;
+  }
+}
+
+@media (min-width: 769px) {
+  .carousel-container {
+    left: 10%;
+  }
+
+  .container {
+    width: 300px;
+  }
+}

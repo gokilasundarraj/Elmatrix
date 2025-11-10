@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="product management.css">
+<title>Admin - Manage Products</title>
+</head>
+<body>
+
+  <div class="navbar">
+
+    <i class="fa-solid fa-bars menu-icon" id="menu-btn"></i>
+    <img src="logo.png" alt="">
+
+  </div>
+  <div class="sidebar" id="sidebar">
+    <i class="fa-solid fa-xmark" id="close"></i>
+    <ul>
+      <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+      <li><a href="Product management.html"><i class="fa-solid fa-box"></i> Product Management</a></li>
+      <li><a href="order.html"><i class="fa-solid fa-file-invoice"></i> Order Management</a></li>
+      <li id="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</li>
+    </ul>
+  </div>
+
+
+<h2 class="sec">Manage Products</h2>
+
+<form id="productForm" class="sec">
+  <input type="text" id="name" placeholder="Product Name" required>
+  <input type="text" id="image" placeholder="Image URL" required>
+  <select id="category" required>
+    <option value="">Select Category</option>
+    <option value="mobile">Mobile</option>
+    <option value="laptop">Laptop</option>
+    <option value="headphone">Head Phone</option>
+    <option value="watch">Smart Watch</option>
+    <option value="tv">TV</option>
+    <option value="camera">Camera</option>
+    <option value="speaker">Speaker</option>
+    <option value="game">Gaming Console</option>
+  </select>
+  <input type="text" id="discount" placeholder="discount" required>
+  <input type="number" id="price" placeholder="Price" required>
+  <input type="number" id="stock" placeholder="Stock" required>
+  <input type="text" id="description" placeholder="description" required>
+  <button type="submit">Add / Update Product</button>
+</form>
+
+<h2>All Products</h2>
+<div class="product-list" id="productList"></div>
+
+<script src="./product management.js"></script>
+
+</body>
+</html>

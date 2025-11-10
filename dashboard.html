@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Admin Dashboard</title>
+
+</head>
+
+<body>
+
+  <div class="navbar">
+
+    <i class="fa-solid fa-bars menu-icon" id="menu-btn"></i>
+    <img src="logo.png" alt="">
+
+  </div>
+  <div class="sidebar" id="sidebar">
+    <i class="fa-solid fa-xmark" id="close"></i>
+    <ul>
+      <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+      <li><a href="Product management.html"><i class="fa-solid fa-box"></i> Product Management</a></li>
+      <li><a href="order.html"><i class="fa-solid fa-file-invoice"></i> Order Management</a></li>
+      <li><i class="fa-solid fa-gear"></i> Logout</li>
+    </ul>
+  </div>
+
+  <div class="full">
+    <div class="dashboard sec">
+      <h2>Dashboard</h2>
+
+      <div class="totalCount">
+        <font class="f sec">
+          <p>Total Registered Users</p>
+          <div id="userCount" class="count-box">0</div>
+        </font>
+
+        <font class="f sec">
+          <p>Total Orders</p>
+          <div id="orderCount" class="count-box">0</div>
+        </font>
+
+        <font class="f sec">
+          <p>Total Products</p>
+          <div id="productCount" class="count-box">0</div>
+        </font>
+        <font class="f sec">
+          <p>Total Profit</p>
+          <div id="profitCount" class="count-box">₹0</div>
+        </font>
+      </div>
+      <button onclick="showUserList()">View User Detail</button>
+    </div>
+    <div id="userList"></div>
+  </div>
+
+  <script src="./dashboard.js"></script>
+
+</body>
+
+</html>

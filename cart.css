@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+TAS:wght@100..400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Playwrite AU TAS", cursive;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.676);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 5px;
+    transition: 2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ff0000, black);
+
+}
+
+body {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(to bottom, white, #007ACC, white);
+
+    header {
+        background: black;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        z-index: 10;
+        top: 0;
+
+        img {
+            height: 100px;
+            width: 100px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+
+        }
+
+        li {
+
+            padding: 10px;
+            border-radius: 10px;
+            margin-right: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: color 0.4s ease;
+            z-index: 1;
+
+            a {
+                text-decoration: none;
+                color: white;
+                font-weight: 800;
+                font-size: 20px;
+            }
+
+            i {
+                color: white;
+                font-size: 28px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+        }
+
+        li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #007ACC, white);
+            border-radius: 5px;
+            transition: width 0.4s ease;
+
+        }
+
+
+        li:hover::before {
+            width: 100%;
+        }
+
+
+        li:hover {
+            a {
+                background: linear-gradient(90deg, #007ACC, white);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                i {
+                    background: linear-gradient(90deg, #007ACC, white);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+
+        .l1 {
+            display: inline-block;
+        }
+
+        .l2 {
+            display: none;
+            transition: 0.5s;
+            overflow: hidden;
+        }
+
+        .l2::before {
+            width: 0px;
+            height: 0px;
+            top: -10;
+        }
+
+        .l2:hover {
+            background: linear-gradient(90deg, #007ACC, white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-icon {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+            padding-right: 10px;
+            color: white;
+
+        }
+
+        .profile-icon:hover {
+            background: linear-gradient(90deg, #007ACC, white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: -275px;
+        width: 275px;
+        height: 100vh;
+        background: #111;
+        transition: 0.5s;
+        padding-top: 60px;
+        z-index: 100;
+
+
+        #close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+
+            li {
+                padding: 15px 25px;
+                border-bottom: 1px solid #333;
+                cursor: pointer;
+                transition: 0.5s;
+                background: linear-gradient(to right, white, red);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                i {
+                    background: linear-gradient(to right, white, red);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-size: 28px;
+                    cursor: pointer;
+                    transition: 0.3s;
+                }
+
+                a {
+                    text-decoration: none;
+                }
+            }
+
+            li:hover {
+                background: linear-gradient(to right, white, #007ACC);
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+
+                i {
+                    background: linear-gradient(to right, white, #007ACC);
+                    -webkit-text-fill-color: transparent;
+                    -webkit-background-clip: text;
+                }
+            }
+        }
+
+    }
+
+    .sidebar.active {
+        right: 0;
+    }
+
+
+    .cart-container {
+        border-radius: 5px;
+        width: 100vw;
+        background-color: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        #cartItems {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 10px;
+            border-radius: 5px;
+            background: linear-gradient(to top, white, #007ACC);
+
+            .cart-item {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                padding: 10px 0px;
+                border-bottom: 1px solid black;
+                gap: 10px;
+
+                img {
+                    width: 80px;
+                    height: 80px;
+                    object-fit: cover;
+                    margin-right: 15px;
+                    border-radius: 5px;
+                }
+
+                .cart-item-details {
+                    flex-basis: 80%;
+
+                }
+
+                .cart-item-details p {
+                    margin: 3px 0;
+                    font-size: 16px;
+
+                }
+
+                .buy-btn {
+                    background: white;
+                    border: 2px solid #1e69de;
+                    color: #1e69de;
+                    padding: 5px 15px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: all 0.4s ease;
+                }
+
+                .buy-btn:hover {
+                    background: linear-gradient(135deg, #00c853, #64dd17);
+                    color: white;
+                    transform: scale(1.1);
+                    box-shadow: 0 6px 20px rgba(0, 255, 128, 0.4);
+                }
+
+                /* REMOVE BUTTON */
+                .remove-btn {
+                    background: #ff3b30;
+                    color: white;
+                    border: none;
+                    padding: 5px 15px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+
+                .remove-btn:hover {
+                    background: #ff1e00;
+                    transform: scale(1.08) rotate(-1deg);
+                    box-shadow: 0 6px 18px rgba(255, 0, 0, 0.4);
+                    animation: shake 0.3s ease-in-out;
+                }
+
+
+                .qty-controls {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+
+                .qty-btn {
+                    position: relative;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                    background: linear-gradient(135deg, #0072ff, #00c6ff);
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+                    transition: all 0.4s ease;
+                    overflow: hidden;
+
+                    font {
+                        top: -20%;
+                        font-size: 20px;
+                        left: 0;
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        display: inline-block;
+                        transition: transform 0.6s ease, color 0.3s ease;
+                    }
+                }
+
+                .qty-btn::after {
+                    content: "";
+                    position: absolute;
+                    inset: 0;
+                    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
+                    opacity: 0;
+                    transition: opacity 0.5s ease;
+                }
+
+                .qty-btn:hover {
+                    transform: translateY(-6px) scale(1.05);
+                    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.4);
+
+                    font {
+                        transform: rotate(360deg);
+                        color: #fff9c4;
+                    }
+                }
+
+                .qty-btn:active {
+                    transform: scale(0.9);
+                    box-shadow: 0 8px 15px rgba(0, 255, 255, 0.3);
+                }
+
+            }
+        }
+    }
+}
+
+
+
+
+.total {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: right;
+}
+
+.empty {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+    margin: 20px 0;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0) scale(1.08);
+    }
+
+    25% {
+        transform: translateX(-2px) rotate(-2deg) scale(1.08);
+    }
+
+    50% {
+        transform: translateX(2px) rotate(2deg) scale(1.08);
+    }
+
+    75% {
+        transform: translateX(-1px) rotate(-1deg) scale(1.08);
+    }
+}
+
+
+@media(max-width:992px) {
+
+    body {
+        header nav ul {
+            .l1 {
+                display: none;
+            }
+
+            .l2 {
+                display: inline-block;
+            }
+        }
+    }
+}

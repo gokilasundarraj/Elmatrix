@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Order Management</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="order.css">
+</head>
+<body>
+
+   <div class="navbar">
+
+    <i class="fa-solid fa-bars menu-icon" id="menu-btn"></i>
+    <img src="logo.png" alt="">
+
+  </div>
+  <div class="sidebar" id="sidebar">
+    <i class="fa-solid fa-xmark" id="close"></i>
+    <ul>
+      <li><a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+      <li><a href="Product management.html"><i class="fa-solid fa-box"></i> Product Management</a></li>
+      <li><a href="order.html"><i class="fa-solid fa-file-invoice"></i> Order Management</a></li>
+      <li id="logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</li>
+    </ul>
+  </div>
+
+<h2>Order Management</h2>
+
+<div class="table-container">
+  <table id="orderTable">
+  <thead>
+    <tr>
+      <th>Product ID</th>
+      <th>Product</th>
+      <th>Image</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+</div>
+
+<p id="emptyMsg" class="empty" style="display:none;">No new user orders found.</p>
+
+<script src="./order.js"></script>
+
+</body>
+</html>

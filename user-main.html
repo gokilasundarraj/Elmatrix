@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="user-main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>User Home Page</title>
+</head>
+
+<body>
+
+  <header>
+
+    <img src="logo.png" class="logo">
+
+    <nav>
+      <ul>
+        <li class="l1"><a href="user-main.html">Home</a></li>
+        <li class="l1"><a href="about.html">About</a></li>
+        <li class="l1"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+        <li class="profile-icon l1" id="profileIcon"><i class="fa-solid fa-user"></i> Guest</li>
+        <li class="l2"><i class="fa-solid fa-bars menu-icon" id="menu-btn"></i></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <i class="fa-solid fa-xmark" id="close"></i>
+    <ul>
+      <li><a href="user-main.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</a></li>
+      <li><a href="user-order.html"><i class="fa-solid fa-box"></i> Order</a></li>
+      <li><a href="history.html"><i class="fa-solid fa-clock-rotate-left"></i> History</a></li>
+      <li id="logout"><i class="fa-solid fa-right-from-bracket"></i>Logout</li>
+    </ul>
+  </div>
+
+  <section class="hero sec">
+    <div class="full1">
+      <div class="left"></div>
+      <div class="right">
+        <font class="f1">
+
+          <p class="discount">Up to 60% Off on Mobile,Tv.. </p>
+
+        </font>
+        <font class="f2">
+
+          <img src="logo.png" alt="">
+          <a href="#gokila"><button class="s1">Shop Now</button></a>
+        </font>
+      </div>
+    </div>
+  </section>
+
+  <section id="gokila" class="categories sec">
+    <h2 class="sec">Shop by Category</h2>
+    <div class="category-grid sec">
+      <a href="mobile.html" class="card sec"><img
+          src="https://www.dennemeyer.com/fileadmin/a/blog/Everyday_IP_Spreading_the_word_about_mobile_phones/Everyday-IP_Spreading-the-word-about-mobile-phones_12.jpg"
+          alt="">
+        <p>Mobile</p>
+      </a>
+      <a href="laptop.html" class="card sec"><img
+          src="https://g2u-wp-prod.s3-ap-southeast-2.amazonaws.com/wp-content/uploads/2025/01/shutterstock_2328203513.jpg"
+          alt="">
+        <p>Laptop</p>
+      </a>
+      <a href="headphone.html" class="card sec"><img src="https://m.media-amazon.com/images/I/61v6atS3dRL.jpg" alt="">
+        <p>Headphone</p>
+      </a>
+      <a href="smartwatch.html" class="card sec"><img
+          src="https://hammeronline.in/cdn/shop/files/Hammerfit.webp?v=1694859121" alt="">
+        <p>Smart Watch</p>
+      </a>
+      <a href="tv.html" class="card sec"><img
+          src="https://images-cdn.ubuy.co.in/67c16783dcab667e6d1ef1a8-samsung-32-class-fhd-1080p-smart-led.jpg" alt="">
+        <p>TV</p>
+      </a>
+      <a href="camera.html" class="card sec"><img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUIi_wwRrOhAk7FoY7EVi2Hg5bAR-6MQGVPg&s" alt="">
+        <p>Camera</p>
+      </a>
+      <a href="speaker.html" class="card sec"><img src="https://audioarray.in/cdn/shop/files/01.jpg?v=1757339500&width=2000"
+          alt="">
+        <p>Speaker</p>
+      </a>
+      <a href="game.html" class="card sec"><img
+          src="https://rukminim2.flixcart.com/image/480/640/xif0q/gamingconsole/w/5/a/entertainment-device-64-retro-handheld-game-r36s-with-3-5-ips-original-imagyarsshyrbmzy.jpeg?q=90"
+          alt="">
+        <p>Gaming Console</p>
+      </a>
+    </div>
+  </section>
+
+  <div class="products sec">
+    <h2 class="sec">Trending Products</h2>
+    <div class="product-grid sec" id="productList"></div>
+  </div>
+
+  <footer>
+    <p><a href="user-order.html">My Order</a></p>
+    <p>© 2025 Elmatrix. All Rights Reserved.</p>
+  </footer>
+
+  <script src="./user-main.js"></script>
+
+</body>
+
+</html>
