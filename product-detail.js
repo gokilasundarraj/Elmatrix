@@ -117,24 +117,22 @@ if (product) {
         status: "Pending",
         delivery: "Delivery within 3–5 days"
     };
-
-    var userOrder;
-    try {
-        userOrder = JSON.parse(localStorage.getItem("userOrder"));
-        if (!Array.isArray(userOrder)) {
-            userOrder = [];
-        }
-    } catch (e) {
-        userOrder = [];
+let userOrder = [];
+  try {
+    const data = JSON.parse(localStorage.getItem("userOrder"));
+    if (Array.isArray(data)) {
+      userOrder = data;
     }
+  } catch (e) {
+    userOrder = [];
+  }
 
-    userOrder.push(order);
+  userOrder.push(order);
+  localStorage.setItem("userOrder", JSON.stringify(userOrder));
 
-    localStorage.setItem("userOrder", JSON.stringify(userOrder));
-
-    alert("✅ Order placed successfully!");
-    window.location.href = "user-order.html";
-});
+  alert("✅ Order placed successfully!");
+  window.location.href = "user-order.html";
+   });
 
 
     document.querySelector(".cart-btn").addEventListener("click", () => {
@@ -182,3 +180,4 @@ logout.addEventListener("click", () => {
     }
 
 })
+
