@@ -127,8 +127,9 @@ let userOrder = [];
     userOrder = [];
   }
 
-  userOrder.push(order);
-  localStorage.setItem("userOrder", JSON.stringify(userOrder));
+   const updatedOrders = [...userOrder, order];
+
+  localStorage.setItem("userOrder", JSON.stringify(updatedOrders));
 
   alert("✅ Order placed successfully!");
   window.location.href = "user-order.html";
@@ -180,4 +181,5 @@ logout.addEventListener("click", () => {
     }
 
 })
+
 
