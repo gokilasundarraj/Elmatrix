@@ -118,7 +118,15 @@ if (product) {
         delivery: "Delivery within 3–5 days"
     };
 
-    var userOrder = JSON.parse(localStorage.getItem("userOrder")) || [];
+    var userOrder;
+    try {
+        userOrder = JSON.parse(localStorage.getItem("userOrder"));
+        if (!Array.isArray(userOrder)) {
+            userOrder = [];
+        }
+    } catch (e) {
+        userOrder = [];
+    }
 
     userOrder.push(order);
 
@@ -172,4 +180,5 @@ logout.addEventListener("click", () => {
         localStorage.removeItem("currentUser")
         window.location.href = "user-login.html"
     }
+
 })
